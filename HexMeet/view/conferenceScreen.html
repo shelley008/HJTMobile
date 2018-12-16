@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+		    <h1 class="mui-title">会议</h1>
+		</header>
+		<div class="mui-content" >
+			<div class="mui-row">
+				<div class="mui-col-sm-6" style="padding-right: 20px;">
+					<li class="mui-table-view-cell" id="openMyRoom">
+						<a class="mui-navigate-right">
+							我的会议室 
+						</a>
+					</li>
+				</div>
+				<div class="mui-col-sm-6">
+					<li class="mui-table-view-cell" id="openConfSchedule">
+						<a class="mui-navigate-right">
+							预约会议
+						</a>
+					</li>
+				</div>
+		    </div>
+		</div>
+		
+		
+		<script src="../js/mui.js"></script>
+		<script type="text/javascript">
+			mui.init({
+				subpages:[
+					{
+						url:'conferences.html',
+						id:'conferences.html',
+						styles:{
+						  top:'90px',//子页面顶部位置
+						  width:'100%',
+						  height:'100%'
+					  },
+					}
+				]
+			})
+			
+			mui.plusReady(function(){
+				document.getElementById('openConfSchedule').addEventListener('tap',function(){
+					mui.openWindow({
+						url:'confSchedule.html',
+						id:'confSchedule',
+						styles:{
+							top:'0px'
+						}
+					})
+				}),
+				document.getElementById('openMyRoom').addEventListener('tap',function(){
+					mui.openWindow({
+						url:'myRoom.html',
+						id:'myRoom',
+						styles:{
+							top:'0px'
+						}
+					})
+				})
+			})
+			
+			function openMyRoom(){
+				mui.toast('2222')
+			}
+		</script>
+	</body>
+
+</html>

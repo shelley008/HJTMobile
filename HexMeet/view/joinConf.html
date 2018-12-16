@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<h1 class="mui-title">加入会议</h1>
+		</header>
+		<div class="mui-content">
+			<a href="tel:1380013800" class="mui-btn mui-btn-blue mui-btn-block">加入会议</a>
+			<a href="sms:10086" class="mui-btn mui-btn-blue mui-btn-block">发短信</a>
+			<a href="javascript:;" id="sms" class="mui-btn mui-btn-blue mui-btn-block">群发短信</a>
+			<a href="mailto:1380013800@qq.com" class="mui-btn mui-btn-blue mui-btn-block">发邮件</a>
+		</div>
+		
+		<script src="../js/mui.js"></script>
+		<script type="text/javascript">
+			mui.init();
+			mui.plusReady(function(){
+				var sms = document.getElementById('sms');
+				sms.addEventListener('tap',function(){
+					var msg = plus.messaging.createMessage(plus.messaging.TYPE_SMS);
+					msg.to = ['11245','233541'];
+					msg.body = '今天是什么日子';
+					plus.messaging.sendMessage(msg)
+				})
+			})
+		</script>
+	</body>
+
+</html>

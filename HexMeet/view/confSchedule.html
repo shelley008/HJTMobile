@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<div id="confSchedule">
+			<header class="mui-bar mui-bar-nav">
+				<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" @tap="goback()"></a>
+				<h1 class="mui-title">预约会议</h1>
+			</header>
+			
+			<div class="mui-content">
+				<form class="mui-input-group">
+					<div class="mui-input-row">
+						<label>会议名称</label>
+						<input type="text" v-model="conf.name" class="mui-input-clear" placeholder="请输入">
+					</div>
+					<div class="mui-input-row">
+						<label>开始时间</label>
+						<input type="date" v-model="conf.startTime" class="mui-input-clear" placeholder="请输入">
+					</div>
+					<div class="mui-input-row">
+						<label>时长</label>
+						<input type="datetime" v-model="conf.duration" class="mui-input-clear" placeholder="请输入">
+					</div>
+					<div class="mui-input-row">
+						<label>会议密码</label>
+						<input type="password" v-model="conf.password" class="mui-input-clear" placeholder="请输入">
+					</div>
+					<div class="mui-input-row">
+						<label>会议备注</label>
+						<input type="text" v-model="conf.description" class="mui-input-clear" placeholder="请输入">
+					</div>
+				</form>
+				
+				<div style="position:fixed;bottom:0;width:100%;">
+					<button type="button" class="mui-btn mui-btn-blue mui-btn-block" @tap="addSchedule">预约</button>
+				</div>
+			</div>
+		
+		</div>
+		
+		<script src="../js/mui.js"></script>
+		<script src="../js/vue.js"></script>
+		<script src="../js/browser.min.js"></script>
+		<script type="text/babel" src="../js/controller.confSchedule.js"></script>
+	</body>
+
+</html>

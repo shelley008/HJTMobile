@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.css" rel="stylesheet" />
+		<link href="../css/page_login.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<div id="Login">
+			<header class="mui-bar mui-bar-nav">
+				<h1 class="mui-title">HexMeet</h1>
+			</header>
+			
+			<div class="mui-content login-main">
+				<div class="login-main-body">
+					<form class="mui-input-group">
+						<div class="mui-input-row">
+							<label>账号</label>
+							<input type="text" class="mui-input-clear" v-model="userName" placeholder="请输入">
+						</div>
+						<div class="mui-input-row">
+							<label>密码</label>
+							<input type="password" class="mui-input-clear" v-model="userPassword" placeholder="请输入">
+						</div>
+					</form>
+					<button type="button" class="mui-btn mui-btn-blue mui-btn-block loginBtn" id="btn1" @tap="userLogin()">登录</button>
+				</div>
+			</div>
+	    </div>
+	
+	
+	<script src="../js/mui.js"></script>
+	<script src="../js/vue.js"></script>
+	<script src="../js/browser.min.js"></script>
+	<script type="text/babel" src="../js/controller.login.js"></script>
+	</body>
+</html>
