@@ -4,9 +4,11 @@ mui.init({
 	keyEventBind: {
 		backbutton: false  //关闭back按键监听
 	}
-});
+})
+
 mui.plusReady(function(){
-	
+	 
+	 
 })
 
 
@@ -26,7 +28,7 @@ var vm = new Vue({
 					password:'7c4a8d09ca3762af61e59520943dc26494f8941b',
 					intranet: false
 				}
-				restLogin(params)
+				restLogin(params);
 			}
 		}
 })
@@ -62,7 +64,7 @@ function restLogin(params){
 
 function openConferen(){
 	mui.openWindow({
-			url:'../view/home.html',
+			url:'home.html',
 			id:'home.html',
 				extras:{
 					name:'shelley',

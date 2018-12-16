@@ -52,4 +52,17 @@ var handlerChangeWebview = function(){
 			//更改当前活跃的选项卡
 			activeTab = targetTab;
 		})
-	}
+}
+	
+//自定义事件
+document.getElementById('setting').addEventListener('tap',function(){
+	mui.toast('set')
+	var targetPage = plus.webview.getWebviewById('setting.html');
+	//var targetPage = plus.webview.getLaunchWebview();  //启动页
+	mui.fire(targetPage,'setUserInfo',{
+	   //自定义事件参数
+	   name:'shelley'
+	})
+})
+
+	

@@ -1,21 +1,21 @@
 mui.init({
-// 	pullRefresh: {
-// 		container:"#refresh",
-// 		down: {
-//           style: mui.os.android ? "circle" : "default",
-// 		  contentdown: "下拉可以刷新"
-// 		  contentover: "释放立即刷新"
-// 		  contentrefresh: "正在刷新..."
-// 		  callback:pulldownRefresh 
-//         },
-// 		up: {
-// 			contentinit: '',
-// 			contentrefresh: '正在加载...',
-// 			contentnomore: '没有更多了',
-// 			callback: pullupRefresh,
-// 		}
-//     }
-});
+	pullRefresh: {
+		container:"#refreshId",
+		down: {
+      style: mui.os.android ? "default" : "circle",
+		  contentdown: "下拉可以刷新",
+		  contentover: "释放立即刷新",
+		  contentrefresh: "正在刷新...",
+		  callback:pulldownRefresh 
+    },
+		up: {
+			contentinit: '',
+			contentrefresh: '正在加载...',
+			contentnomore: '没有更多了',
+			callback: pullupRefresh
+		 }
+    }
+})
 
 mui.plusReady(function(){
 	loadData();
@@ -46,6 +46,11 @@ var vm = new Vue({
 //下拉刷新具体业务实现
 function pulldownRefresh() {
 	loadData();
+	setTimeout(function(){
+		mui('#refresh').pullRefresh().endPullupToRefresh();
+		mui.toast('aaa')
+	},1000)
+	
 }
 
 // 上拉加载具体业务实现
@@ -83,6 +88,7 @@ function loadData(){
 				success:function(data){
 					//mui.toast('has data');
 					vm.conferences = data;
+					return;
 				},
 				error:function(xhr,type,errorThrown){
 					//mui.toast('sorry no data');

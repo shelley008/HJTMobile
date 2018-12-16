@@ -14,7 +14,7 @@
 		<div class="mui-content">
 			 <!-- 会议列表 -->
 			 <h5>会议列表</h5>
-			 <div id="refresh">
+			 <div id="refreshId" class="mui-content mui-scroll-wrapper">
 				<div class="mui-scroll">
                    <!--数据列表-->
                    <ul class="mui-table-view mui-table-view-chevron" v-if="conferences.length > 0">
@@ -26,8 +26,8 @@
 							</div>
 							
 							<span v-for="(user,index) in conf.userIds">
-                                 <img src="../image/pic/a2.jpg" width="30"/>
-                            </span>
+                  <img src="../image/pic/a2.jpg" width="30"/>
+               </span>
 						</li>
 				</ul>
 				</div>
@@ -36,9 +36,11 @@
 		</div>
 		</div>
 		<script src="../js/mui.js"></script>
+		<script src="../js/mui.pullToRefresh.js"></script>
+    <script src="../js/mui.pullToRefresh.material.js"></script>
 		<script src="../js/vue.js"></script>
 		<script src="../js/browser.min.js"></script>
-		<script type="text/babel" src="../js/controller.conferences.js"></script>
+		<script type="text/babel" src="../js/controller.conferencesList.js"></script>
 	</body>
 
 </html>

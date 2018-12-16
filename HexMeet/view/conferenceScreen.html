@@ -37,8 +37,8 @@
 			mui.init({
 				subpages:[
 					{
-						url:'conferences.html',
-						id:'conferences.html',
+						url:'conferencesList.html',
+						id:'conferencesList.html',
 						styles:{
 						  top:'90px',//子页面顶部位置
 						  width:'100%',
@@ -49,6 +49,7 @@
 			})
 			
 			mui.plusReady(function(){
+				//新增约会页
 				document.getElementById('openConfSchedule').addEventListener('tap',function(){
 					mui.openWindow({
 						url:'confSchedule.html',
@@ -58,6 +59,8 @@
 						}
 					})
 				}),
+				
+				//我的会议室
 				document.getElementById('openMyRoom').addEventListener('tap',function(){
 					mui.openWindow({
 						url:'myRoom.html',
@@ -69,9 +72,9 @@
 				})
 			})
 			
-			function openMyRoom(){
-				mui.toast('2222')
-			}
+			
+			
+			
 		</script>
 	</body>
 
